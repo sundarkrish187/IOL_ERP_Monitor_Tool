@@ -305,7 +305,7 @@ Public Class PHOBICClass
 
             'NONPRELOADED DB
             Dim dsNP As New DataSet
-            strsql = "select * from View_NONPRELOADED_Monitor_Hourly where " + byname + " = '" & lst(i) & "' and BoxTime BETWEEN '" + selectedDate.ToString("yyyy-MM-dd") + "' AND '" + selectedDate.ToString("yyyy-MM-dd") + "' order by cast (hour as int)  "
+            strsql = "select * from View_NONPRELOADED_Monitor_Hourly  where " + byname + " = '" & lst(i) & "' and BoxTime BETWEEN '" + selectedDate.ToString("yyyy-MM-dd") + "' AND '" + selectedDate.ToString("yyyy-MM-dd") + "' order by cast (hour as int)  "
             cmd = New SqlCommand(strsql, conNP)
             Dim ad2 = New SqlDataAdapter(cmd)
             ad2.Fill(dsNP)
